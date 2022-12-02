@@ -2,15 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @font-face {
   font-family: "SctoGroteskA-Regular";
-  src: url("/assets/fonts/SctoGroteskA-Regular.woff2") format("woff2");
+  src: url("../fonts/SctoGroteskA-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "SctoGroteskA-Medium";
-  src: url("/assets/fonts/SctoGroteskA-Medium.woff2");
+  src: url("../fonts/SctoGroteskA-Medium.woff2");
 }
 @font-face {
   font-family: "SctoGroteskA-Bold";
-  src: url("/assets/fonts/SctoGroteskA-Bold.woff2");
+  src: url("../fonts/SctoGroteskA-Bold.woff2");
 }
 html, body, a, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
