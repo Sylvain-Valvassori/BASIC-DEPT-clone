@@ -1,0 +1,47 @@
+@use '../library' as *;
+
+
+
+.navbar {
+
+    width: 100%;
+    // height: 20rem;
+
+    padding: 6rem 8rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+
+    ul{
+        display: flex;
+        gap: 6rem;
+        
+        
+        .btn-nav{
+            
+            color: $clr-white;
+            font-size: 1.4rem;
+            font-family: $fnt-main-medium;
+            text-transform: uppercase;
+        }
+    }
+    
+    .logo-navbar{
+        justify-self: start;
+
+        width: auto;
+        height: 2.2rem;
+
+        fill: $clr-white;        
+    }
+    .initiatives__icon{
+        justify-self: end;
+
+        width: auto;
+        height: .7rem;
+
+        fill: $clr-white;
+    }
+}

@@ -1,0 +1,19 @@
+//--------------------------------------------------------------------------------
+//=================================| Responsive |=================================
+//---------|>  !!ATTENTION!! ordre des includes du plus grand au plus petit  <|---------
+//--------------------------------------------------------------------------------
+
+
+// ---| tableau de breakpoint |---
+$breakpoints: (
+  mobile              :     1px * 768, 
+  tablet              :     1px * 960, 
+  laptop              :     1px * 1600,
+  big-screen          :     1px * 1800,
+);
+
+// ---| la mixin |---
+@mixin mq ($breakpoint) {
+  @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
+}
+  

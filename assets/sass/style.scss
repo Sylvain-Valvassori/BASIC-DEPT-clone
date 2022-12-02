@@ -1,0 +1,18 @@
+@use './library' as *;
+@use './components' as *;
+
+
+body {
+    // padding: 0 10rem;
+    
+    width: 100%;
+    height: 100vh;
+    
+    
+    font-family: $fnt-main-regular;
+    color: $clr-secondary;
+    
+    background-color: $clr-main;
+    background-color: $clr-secondary;
+}
+
