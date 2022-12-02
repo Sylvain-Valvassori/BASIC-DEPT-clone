@@ -111,6 +111,17 @@ td, th {
     font-size: 1.4rem;
     font-family: "SctoGroteskA-Medium", serif;
     text-transform: uppercase;
+    position: relative;
+  }
+  .header_nav ul .btn-nav:hover:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: white;
+    animation: lineIN 200ms ease-in-out;
   }
   .header .menu span {
     display: none;
@@ -122,6 +133,22 @@ td, th {
   }
 }
 
+@keyframes lineIN {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes lineOUT {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
 body {
   width: 100%;
   height: 100vh;
