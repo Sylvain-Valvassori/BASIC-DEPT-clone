@@ -10,10 +10,12 @@ $breakpoints: (
   tablet              :     1px * 960, 
   laptop              :     1px * 1600,
   big-screen          :     1px * 1800,
+  test                :     1px * 1280, 
+
 );
 
 // ---| la mixin |---
 @mixin mq ($breakpoint) {
-  @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
+  @media screen and (min-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }
   

@@ -64,35 +64,62 @@ td, th {
   padding: 0;
 }
 
-.navbar {
+.header {
   width: 100%;
-  padding: 6rem 8rem;
+  height: 12.6rem;
+  padding: 5rem 8rem;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
 }
-.navbar ul {
-  display: flex;
-  gap: 6rem;
-}
-.navbar ul .btn-nav {
-  color: white;
-  font-size: 1.4rem;
-  font-family: "SctoGroteskA-Medium", serif;
-  text-transform: uppercase;
-}
-.navbar .logo-navbar {
+.header_logo {
   justify-self: start;
-  width: auto;
+}
+.header_logo svg {
+  width: 16rem;
   height: 2.2rem;
   fill: white;
 }
-.navbar .initiatives__icon {
+.header_nav, .header .icon_initiatives {
+  display: none;
+}
+.header .menu {
+  all: unset;
+  cursor: pointer;
   justify-self: end;
-  width: auto;
-  height: 0.7rem;
-  fill: white;
+}
+.header .menu span {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "SctoGroteskA-Medium", serif;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 1280px) {
+  .header {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .header_nav, .header .icon_initiatives {
+    display: inherit;
+  }
+  .header_nav ul {
+    display: flex;
+    gap: 6rem;
+  }
+  .header_nav ul .btn-nav {
+    color: white;
+    font-size: 1.4rem;
+    font-family: "SctoGroteskA-Medium", serif;
+    text-transform: uppercase;
+  }
+  .header .menu span {
+    display: none;
+  }
+  .header .menu .icon_initiatives svg {
+    width: 2.2rem;
+    height: 2.6rem;
+    fill: white;
+  }
 }
 
 body {
