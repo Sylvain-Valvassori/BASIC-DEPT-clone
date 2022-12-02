@@ -8,7 +8,7 @@
 
 - Author : Sylain Valvassori.
 - Origin : [model](https://www.basicagency.com/).
-- End product : [:point_right: BASIC/DEPT CLONE :point_left:](https://sylvain-valvassori.github.io/BASIC-DEPT-CLONE/)
+- End product : [:point_right: BASIC/DEPT CLONE :point_left:](https://sylvain-valvassori.github.io/BASIC-DEPT-clone/)
 
 #### Context : BASIC-DEPT-CLONE is a project adapted from this [model](https://www.frontendpractice.com/projects/basic) to learn how to make create drag slide.<br>
 
