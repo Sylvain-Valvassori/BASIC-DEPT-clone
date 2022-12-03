@@ -112,8 +112,9 @@ td, th {
     font-family: "SctoGroteskA-Medium", serif;
     text-transform: uppercase;
     position: relative;
+    transition: animation lineOUT 200ms ease-out;
   }
-  .header_nav ul .btn-nav:hover:after {
+  .header_nav ul .btn-nav:hover::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -122,6 +123,16 @@ td, th {
     height: 0.1rem;
     background-color: white;
     animation: lineIN 200ms ease-in-out;
+  }
+  .header_nav ul .btn-nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 0.1rem;
+    background-color: white;
+    animation: lineOUT 200ms ease-in-out;
   }
   .header .menu span {
     display: none;

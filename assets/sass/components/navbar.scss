@@ -43,7 +43,7 @@
       
     }
     
-    @include mq ('test'){
+    @include mq ('small-laptop'){
         grid-template-columns: repeat(3, 1fr);
 
         &_nav, .icon_initiatives {
@@ -61,9 +61,10 @@
                 text-transform: uppercase;
                 position: relative;
                
-                
+                transition: animation lineOUT 200ms ease-out;
                 &:hover{
-                    &:after {
+                    
+                    &::after {
                         content:'';
                         position: absolute;
                         bottom: 0;
@@ -75,6 +76,19 @@
 
                         animation: lineIN 200ms ease-in-out;
                     }
+                }
+
+                &::after{
+                    content:'';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+
+                    width: 0%;
+                    height: .1rem;
+                    background-color: $clr-white;
+
+                    animation: lineOUT 200ms ease-in-out;
                 }
             }
         }
