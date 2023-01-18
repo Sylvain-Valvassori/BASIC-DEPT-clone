@@ -61,23 +61,6 @@
                 text-transform: uppercase;
                 position: relative;
                
-                transition: animation lineOUT 200ms ease-out;
-                &:hover{
-                    
-                    &::after {
-                        content:'';
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-    
-                        width: 100%;
-                        height: .1rem;
-                        background-color: $clr-white;
-
-                        animation: lineIN 200ms ease-in-out;
-                    }
-                }
-
                 &::after{
                     content:'';
                     position: absolute;
@@ -87,9 +70,17 @@
                     width: 0%;
                     height: .1rem;
                     background-color: $clr-white;
+                    transition: width 200ms ease-in-out;
 
-                    animation: lineOUT 200ms ease-in-out;
                 }
+                &:hover{
+                    
+                    &::after {
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+
             }
         }
         .menu {
@@ -105,23 +96,5 @@
                 fill: $clr-white;
             }
         } 
-    }
-}
-
-
-@keyframes lineIN {
-    0%{
-        width: 0;
-    }
-    100%{
-        width: 100%
-    }
-}
-@keyframes lineOUT {
-    0%{
-        width: 100%;
-    }
-    100%{
-        width: 0%
     }
 }
