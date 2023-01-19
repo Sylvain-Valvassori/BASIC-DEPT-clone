@@ -42,7 +42,7 @@
        }
     }
     
-    @include mq ('small-laptop'){
+    @include min-mq ('small-laptop'){
         grid-template-columns: repeat(3, 1fr);
 
         &_nav, .icon_initiatives {

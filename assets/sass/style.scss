@@ -17,8 +17,6 @@ body {
     color: $clr-secondary;
 }
 
-
-
 .showreel {
 
     width: 100%;
@@ -27,6 +25,8 @@ body {
     overflow: hidden;
     
     video{
+        width: 100%;
+        height: 100vh;
         object-fit: cover;
         object-position: center top;
     }
@@ -38,24 +38,47 @@ body {
 }
 
 
-.noise{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
 
-    &::after{
-        content: "";
-        position: absolute;
-        left: -10rem;
-        top: -10rem;
-        width: calc(100% + 20rem);
-        height: calc(100% + 20rem);
-        background-image: url(../images/noise.png);
-        
-        animation: noise 1s steps(2) infinite;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.noise{
+    pointer-events: none;
+    width: calc(100vw + 20rem);
+    height: calc(100vh + 20rem);
+    position: fixed;
+    left: -10rem;
+    top: -10rem;
+
+    background-position:  50%;
+    background-image: url(../images/noise.png);
+    
+    animation: noise 1s steps(2) infinite;
 }
 
 @keyframes noise{

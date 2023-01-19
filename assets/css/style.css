@@ -12,7 +12,7 @@
   font-family: "SctoGroteskA-Bold";
   src: url("../fonts/SctoGroteskA-Bold.woff2");
 }
-html, body, a, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+html, body, a, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6, button, input, select, td, th {
   margin: 0;
   padding: 0;
 }
@@ -24,10 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 
 ul {
   list-style: none;
-}
-
-button, input, select {
-  margin: 0;
 }
 
 html {
@@ -58,10 +54,6 @@ iframe {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-td, th {
-  padding: 0;
 }
 
 .header {
@@ -172,17 +164,27 @@ td, th {
 .overview .cell_left .cta-toWork {
   margin-top: 4rem;
 }
-.overview .cell_right {
-  position: relative;
-  top: 0;
-  left: 0;
-}
 .overview .cell_right svg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 82%;
+  margin-left: calc(100% - clamp(38rem, 60%, 70rem));
+  width: clamp(38rem, 60%, 70rem);
   fill: #252422;
+}
+@media screen and (max-width: 1280px) {
+  .overview {
+    display: block;
+    padding: clamp(3rem, 10%, 8rem) 7rem;
+    height: fit-content;
+  }
+  .overview .cell_left .overview-content {
+    width: 55%;
+    font-size: 2.2rem;
+  }
+  .overview .cell_right {
+    margin-top: 8rem;
+  }
+  .overview .cell_right svg {
+    width: clamp(38rem, 60%, 70rem);
+  }
 }
 
 .cta {
@@ -190,7 +192,7 @@ td, th {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  padding: 0 3rem;
+  padding: 0.1rem 3rem;
   border: solid 0.1rem #252422;
   border-radius: 2rem;
   font-size: 1.1rem;
@@ -209,7 +211,7 @@ td, th {
   width: 100%;
   height: 100%;
   background-color: #252422;
-  transition: top 250ms ease-in-out;
+  transition: top 270ms ease-in-out;
 }
 .cta:hover {
   color: #f4f4f4;
@@ -240,6 +242,8 @@ body {
   overflow: hidden;
 }
 .showreel video {
+  width: 100%;
+  height: 100vh;
   object-fit: cover;
   object-position: center top;
 }
@@ -250,19 +254,13 @@ body {
 }
 
 .noise {
-  width: 100vw;
-  height: 100vh;
+  pointer-events: none;
+  width: calc(100vw + 20rem);
+  height: calc(100vh + 20rem);
   position: fixed;
-  left: 0;
-  top: 0;
-}
-.noise::after {
-  content: "";
-  position: absolute;
   left: -10rem;
   top: -10rem;
-  width: calc(100% + 20rem);
-  height: calc(100% + 20rem);
+  background-position: 50%;
   background-image: url(../images/noise.png);
   animation: noise 1s steps(2) infinite;
 }

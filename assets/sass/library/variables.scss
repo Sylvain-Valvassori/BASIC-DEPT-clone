@@ -16,3 +16,8 @@ $fnt-main-regular       :   'SctoGroteskA-Regular', serif;
 $fnt-main-medium        :   'SctoGroteskA-Medium', serif;
 $fnt-main-bold          :   'SctoGroteskA-Bold', serif;
 $fnt-secondary          :   'Poppins', sans-serif;
+
+
+//* ---------| width |---------
+$width-BD-logo          :   clamp(38rem, 60% ,70rem);
+$width-BD-logo-tablet   :   clamp(38rem,70%, 68rem);
