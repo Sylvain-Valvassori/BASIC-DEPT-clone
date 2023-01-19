@@ -15,8 +15,6 @@ body {
     
     font-family: $fnt-main-regular;
     color: $clr-secondary;
-
-
 }
 
 
@@ -40,7 +38,6 @@ body {
 }
 
 
-
 .noise{
     width: 100vw;
     height: 100vh;
@@ -60,8 +57,6 @@ body {
         animation: noise 1s steps(2) infinite;
     }
 }
-
-
 
 @keyframes noise{
      0% { transform: translate(       0,   9rem ) }
