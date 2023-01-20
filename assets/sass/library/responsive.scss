@@ -6,20 +6,29 @@
 
 // ---| tableau de breakpoint |---
 $breakpoints: (
-  mobile              :     1px * 720, 
-  tablet              :     1px * 960, 
-  small-laptop        :     1px * 1280, 
-  laptop              :     1px * 1600,
+  mobile-S            :     1px * 320, 
+  mobile-M            :     1px * 375, 
+  mobile-L            :     1px * 425, 
+  tablet              :     1px * 768, 
+  laptop              :     1px * 1024, 
+  laptop-M            :     1px * 1280, 
+  laptop-L            :     1px * 1440, 
+  laptop-XL           :     1px * 1600,
   big-screen          :     1px * 1800,
+  4k                  :     1px * 2560,
 
 );
 
-// ---| la mixin desktop first |---
+//=============================| Responsive desktop first |=============================
+//---------|>  !!ATTENTION!! ordre des includes du plus petit au plus grand  <|---------
+//--------------------------------------------------------------------------------------
 @mixin min-mq ($breakpoint) {
   @media screen and (min-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }
-  
-// ---| la mixin mobile first|---
+
+//=============================| Responsive mobile first |==============================
+//---------|>  !!ATTENTION!! ordre des includes du plus grand au plus petit  <|---------
+//--------------------------------------------------------------------------------------
 @mixin max-mq ($breakpoint) {
   @media screen and (max-width: map-get($breakpoints, $breakpoint)) { @content; }        
 }

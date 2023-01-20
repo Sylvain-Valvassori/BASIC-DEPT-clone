@@ -1,0 +1,67 @@
+@use '../library' as *;
+
+
+.overview {
+    width: 100%;
+    height: 48rem;
+    padding: 12rem 8rem;
+    
+    display: flex;
+    gap: 2rem;
+    
+    color: $clr-secondary;
+    .cell{
+        width: 100%;
+        height: 100%;
+        
+        &_left{
+            
+            .overview-content{
+                font-size: 3.8rem;
+                line-height: 1.1;
+                letter-spacing: -0.035em;
+                font-family: $fnt-main-medium;
+
+                @include max-mq ('small-laptop'){
+                    width: 55%;
+                    font-size: 2.2rem;
+                }
+                @include max-mq ('mobile'){
+                    width: 80%;
+                }
+            }
+
+            .cta-toWork{
+                margin-top: 4rem;
+            }
+        }
+
+        &_right{
+            
+            svg{
+                margin-left: calc(100% - $width-BD-logo );
+                width: $width-BD-logo;
+                fill: $clr-secondary;
+                
+                @include max-mq ('mobile'){
+                    margin-left: calc(100% - $width-BD-logo-mobile );
+                    width: $width-BD-logo-mobile;
+                }
+            } 
+
+            @include max-mq ('small-laptop'){
+                margin-top: 8rem;
+            }
+        }
+    }    
+
+    @include max-mq ('small-laptop'){
+        display: block;
+        padding: clamp(3rem, 70%, 8rem) clamp(4rem, 70%, 7rem);
+        height: fit-content;
+    }
+  
+    @include max-mq ('mobile'){
+        padding: 3rem 4rem;
+    }
+}
