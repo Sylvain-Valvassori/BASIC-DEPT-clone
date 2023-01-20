@@ -109,4 +109,10 @@
             }
         } 
     }
+
+
+    @include max-mq ('mobile'){
+        padding: 5rem 4rem;
+
+    }
 }

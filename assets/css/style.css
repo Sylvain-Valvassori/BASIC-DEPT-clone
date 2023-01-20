@@ -142,6 +142,11 @@ table {
     transform: translateX(0.2rem);
   }
 }
+@media screen and (max-width: 720px) {
+  .header {
+    padding: 5rem 4rem;
+  }
+}
 
 .overview {
   width: 100%;
@@ -161,6 +166,17 @@ table {
   letter-spacing: -0.035em;
   font-family: "SctoGroteskA-Medium", serif;
 }
+@media screen and (max-width: 1280px) {
+  .overview .cell_left .overview-content {
+    width: 55%;
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 720px) {
+  .overview .cell_left .overview-content {
+    width: 80%;
+  }
+}
 .overview .cell_left .cta-toWork {
   margin-top: 4rem;
 }
@@ -169,21 +185,27 @@ table {
   width: clamp(38rem, 60%, 70rem);
   fill: #252422;
 }
+@media screen and (max-width: 720px) {
+  .overview .cell_right svg {
+    margin-left: calc(100% - clamp(24rem, 60%, 38rem));
+    width: clamp(24rem, 60%, 38rem);
+  }
+}
 @media screen and (max-width: 1280px) {
-  .overview {
-    display: block;
-    padding: clamp(3rem, 10%, 8rem) 7rem;
-    height: fit-content;
-  }
-  .overview .cell_left .overview-content {
-    width: 55%;
-    font-size: 2.2rem;
-  }
   .overview .cell_right {
     margin-top: 8rem;
   }
-  .overview .cell_right svg {
-    width: clamp(38rem, 60%, 70rem);
+}
+@media screen and (max-width: 1280px) {
+  .overview {
+    display: block;
+    padding: clamp(3rem, 70%, 8rem) clamp(4rem, 70%, 7rem);
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 720px) {
+  .overview {
+    padding: 3rem 4rem;
   }
 }
 
