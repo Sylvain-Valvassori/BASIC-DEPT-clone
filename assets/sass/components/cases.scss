@@ -1,0 +1,49 @@
+@use '../library' as *;
+
+
+.cases{
+
+    width: 100%;
+    height: 40rem;
+    
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    
+    overflow: scroll;
+    .case{
+        &-container{
+            width: min-content;
+            aspect-ratio: 2/1;
+
+            .case-img{
+                width: 22rem;
+                aspect-ratio: 2/1;
+
+                img{
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+            .case-infos{
+                padding: 1rem 2rem;
+
+                h3{
+                    font-size: 1.8rem;
+                    font-family: $fnt-main-bold;
+                    text-transform: uppercase;
+                }
+                p{
+                    margin-top: 1rem;
+                    padding-right: 25%;
+                    
+                    font-size: 1.1rem;
+                    font-family: $fnt-main-medium;
+                    text-transform: uppercase;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+}

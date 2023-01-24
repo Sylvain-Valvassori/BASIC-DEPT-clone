@@ -245,6 +245,44 @@ table {
   top: 0;
 }
 
+.cases {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  overflow: scroll;
+}
+.cases .case-container {
+  width: min-content;
+  aspect-ratio: 2/1;
+}
+.cases .case-container .case-img {
+  width: 22rem;
+  aspect-ratio: 2/1;
+}
+.cases .case-container .case-img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.cases .case-container .case-infos {
+  padding: 1rem 2rem;
+}
+.cases .case-container .case-infos h3 {
+  font-size: 1.8rem;
+  font-family: "SctoGroteskA-Bold", serif;
+  text-transform: uppercase;
+}
+.cases .case-container .case-infos p {
+  margin-top: 1rem;
+  padding-right: 25%;
+  font-size: 1.1rem;
+  font-family: "SctoGroteskA-Medium", serif;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
 body {
   position: relative;
   top: 0;
@@ -268,7 +306,7 @@ body {
   object-position: center top;
 }
 
-.cases {
+.clients {
   height: 100vh;
   width: 100%;
 }
