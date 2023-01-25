@@ -69,15 +69,15 @@ table {
   justify-items: center;
   align-items: center;
 }
-.header_logo {
+.header__logo {
   justify-self: start;
 }
-.header_logo svg {
+.header__logo svg {
   width: 16rem;
   height: 2.2rem;
   fill: white;
 }
-.header_nav, .header .icon_initiatives {
+.header__nav, .header .icon__initiatives {
   display: none;
 }
 .header .menu {
@@ -95,21 +95,21 @@ table {
   .header {
     grid-template-columns: repeat(3, 1fr);
   }
-  .header_nav, .header .icon_initiatives {
+  .header__nav, .header .icon__initiatives {
     display: initial;
   }
-  .header_nav ul {
+  .header__nav ul {
     display: flex;
     gap: 6rem;
   }
-  .header_nav ul .btn-nav {
+  .header__nav ul .btn-nav {
     color: white;
     font-size: 1.4rem;
     font-family: "SctoGroteskA-Medium", serif;
     text-transform: uppercase;
     position: relative;
   }
-  .header_nav ul .btn-nav::after {
+  .header__nav ul .btn-nav::after {
     content: "";
     position: absolute;
     right: 0;
@@ -119,20 +119,20 @@ table {
     background-color: white;
     transition: width 200ms ease-in-out;
   }
-  .header_nav ul .btn-nav:hover::after {
+  .header__nav ul .btn-nav:hover::after {
     left: 0;
     width: 100%;
   }
   .header .menu span {
     display: none;
   }
-  .header .menu .icon_initiatives svg {
+  .header .menu .icon__initiatives svg {
     width: 2.2rem;
     height: 2.6rem;
     fill: white;
     overflow: visible;
   }
-  .header .menu .icon_initiatives svg circle {
+  .header .menu .icon__initiatives svg circle {
     transition: transform 125ms ease-in-out;
   }
   .header .menu:hover svg :first-child {
@@ -149,11 +149,11 @@ table {
   padding: clamp(3rem, 6%, 12rem) clamp(4rem, 10%, 8rem);
   color: #252422;
 }
-.overview .cell {
+.overview__cell {
   width: 100%;
   height: 100%;
 }
-.overview .cell_left .overview-content {
+.overview__cell--left .overview-content {
   font-size: 2.2rem;
   line-height: 1.1;
   letter-spacing: -0.035em;
@@ -161,40 +161,40 @@ table {
   width: 100%;
 }
 @media screen and (min-width: 425px) {
-  .overview .cell_left .overview-content {
+  .overview__cell--left .overview-content {
     width: 80%;
   }
 }
 @media screen and (min-width: 768px) {
-  .overview .cell_left .overview-content {
+  .overview__cell--left .overview-content {
     width: 55%;
   }
 }
 @media screen and (min-width: 1280px) {
-  .overview .cell_left .overview-content {
+  .overview__cell--left .overview-content {
     width: 90%;
     font-size: 3.8rem;
   }
 }
-.overview .cell_left .cta-toWork {
+.overview__cell--left .cta-toWork {
   margin-top: 4rem;
 }
-.overview .cell_right {
+.overview__cell--right {
   margin-top: 8rem;
 }
-.overview .cell_right svg {
+.overview__cell--right svg {
   margin-left: calc(100% - clamp(24rem, 85%, 38rem));
   width: clamp(24rem, 85%, 38rem);
   fill: #252422;
 }
 @media screen and (min-width: 425px) {
-  .overview .cell_right svg {
+  .overview__cell--right svg {
     margin-left: calc(100% - clamp(38rem, 85%, 70rem));
     width: clamp(38rem, 85%, 70rem);
   }
 }
 @media screen and (min-width: 1280px) {
-  .overview .cell_right {
+  .overview__cell--right {
     margin-top: 0;
   }
 }
@@ -212,7 +212,7 @@ table {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  padding: 0.2rem 3rem;
+  padding: 0.1rem 3rem;
   border: solid 0.1rem #252422;
   border-radius: 2rem;
   font-size: 1.1rem;
@@ -256,36 +256,36 @@ table {
   flex-grow: 1;
   flex-basis: 100%;
 }
-.cases .case-container .case-img img, .cases .case-container .case-img video {
+.cases .case__img img, .cases .case__img video {
   height: 30rem;
   aspect-ratio: 2/1;
   object-fit: cover;
   object-position: center center;
 }
 @media screen and (min-width: 1024px) {
-  .cases .case-container .case-img img, .cases .case-container .case-img video {
+  .cases .case__img img, .cases .case__img video {
     height: 45rem;
   }
 }
 @media screen and (max-width: 768px) {
-  .cases .case-container .case-img img, .cases .case-container .case-img video {
+  .cases .case__img img, .cases .case__img video {
     min-width: 24rem;
   }
 }
-.cases .case-container .case-infos {
+.cases .case__infos {
   padding: 1rem 2rem;
 }
-.cases .case-container .case-infos h3 {
+.cases .case__infos h3 {
   font-size: 1.8rem;
   font-family: "SctoGroteskA-Bold", serif;
   text-transform: uppercase;
 }
 @media screen and (min-width: 1024px) {
-  .cases .case-container .case-infos h3 {
+  .cases .case__infos h3 {
     font-size: 2rem;
   }
 }
-.cases .case-container .case-infos p {
+.cases .case__infos p {
   margin-top: 1rem;
   padding-right: 25%;
   font-size: 1.1rem;
@@ -294,13 +294,13 @@ table {
   word-wrap: break-word;
 }
 @media screen and (min-width: 1024px) {
-  .cases .case-container .case-infos p {
+  .cases .case__infos p {
     padding-right: 40%;
     font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .cases .case-container .case-infos {
+  .cases .case__infos {
     padding: 2rem 3rem;
   }
 }
@@ -308,6 +308,12 @@ table {
   .cases {
     flex-direction: column;
   }
+}
+
+.clients {
+  width: 100%;
+  height: 55rem;
+  background-color: cadetblue;
 }
 
 body {
@@ -333,7 +339,7 @@ body {
   object-position: center top;
 }
 
-.clients {
+footer {
   height: 100vh;
   width: 100%;
 }

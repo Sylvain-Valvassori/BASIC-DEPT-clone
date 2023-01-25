@@ -13,52 +13,50 @@
         flex-grow: 1;
         flex-basis: 100%;
 
-        &-container{
-            .case-img{                
-                img,video{
-                    height: 30rem;
-                    aspect-ratio: 2/1;
-                    object-fit: cover;
-                    object-position: center center;
-                    
-                    @include min-mq ('laptop'){
-                        height: max(45rem);
-                    }
-                    @include max-mq ('tablet'){
-                        min-width: 24rem;
-                    }
+        &__img{                
+            img,video{
+                height: 30rem;
+                aspect-ratio: 2/1;
+                object-fit: cover;
+                object-position: center center;
+                
+                @include min-mq ('laptop'){
+                    height: max(45rem);
+                }
+                @include max-mq ('tablet'){
+                    min-width: 24rem;
                 }
             }
-            .case-infos{
-                padding: 1rem 2rem;
+        }
+        &__infos{
+            padding: 1rem 2rem;
 
-                h3{
-                    font-size: 1.8rem;
-                    font-family: $fnt-main-bold;
-                    text-transform: uppercase;
+            h3{
+                font-size: 1.8rem;
+                font-family: $fnt-main-bold;
+                text-transform: uppercase;
 
-                    @include min-mq ('laptop'){
-                        font-size: 2rem;
-                    }
-                }
-
-                p{
-                    margin-top: 1rem;
-                    padding-right: 25%;
-                    
-                    font-size: 1.1rem;
-                    font-family: $fnt-main-medium;
-                    text-transform: uppercase;
-                    word-wrap: break-word;
-
-                    @include min-mq ('laptop'){
-                        padding-right: 40%;
-                        font-size: 1.3rem;
-                    }
-                }
                 @include min-mq ('laptop'){
-                    padding: 2rem 3rem;
+                    font-size: 2rem;
                 }
+            }
+
+            p{
+                margin-top: 1rem;
+                padding-right: 25%;
+                
+                font-size: 1.1rem;
+                font-family: $fnt-main-medium;
+                text-transform: uppercase;
+                word-wrap: break-word;
+
+                @include min-mq ('laptop'){
+                    padding-right: 40%;
+                    font-size: 1.3rem;
+                }
+            }
+            @include min-mq ('laptop'){
+                padding: 2rem 3rem;
             }
         }
     }
