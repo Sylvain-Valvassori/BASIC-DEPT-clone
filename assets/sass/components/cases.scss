@@ -64,8 +64,8 @@
                 }
             }
         }
-        @include min-mq ('laptop'){
-            flex-grow: 1;
-        }
+    }
+    @include max-mq ('tablet'){
+        flex-direction: column;
     }
 }

@@ -305,9 +305,9 @@ table {
     padding: 2rem 3rem;
   }
 }
-@media screen and (min-width: 1024px) {
-  .cases .case {
-    flex-grow: 1;
+@media screen and (max-width: 768px) {
+  .cases {
+    flex-direction: column;
   }
 }
 
