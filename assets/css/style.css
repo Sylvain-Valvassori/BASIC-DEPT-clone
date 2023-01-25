@@ -251,7 +251,6 @@ table {
   display: flex;
   gap: 2rem;
   padding: 0 clamp(4rem, 10%, 8rem);
-  overflow-x: auto;
 }
 .cases .case {
   flex-grow: 1;
