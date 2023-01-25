@@ -212,7 +212,7 @@ table {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  padding: 0.1rem 3rem;
+  padding: 0.2rem 3rem;
   border: solid 0.1rem #252422;
   border-radius: 2rem;
   font-size: 1.1rem;
@@ -247,24 +247,31 @@ table {
 
 .cases {
   width: 100%;
-  height: 40rem;
+  height: min-content;
   display: flex;
   gap: 2rem;
-  padding: 1rem 2rem;
-  overflow: scroll;
+  padding: 0 clamp(4rem, 10%, 8rem);
+  overflow-x: auto;
 }
-.cases .case-container {
-  width: min-content;
+.cases .case {
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+.cases .case-container .case-img img, .cases .case-container .case-img video {
+  height: 30rem;
   aspect-ratio: 2/1;
-}
-.cases .case-container .case-img {
-  width: 22rem;
-  aspect-ratio: 2/1;
-}
-.cases .case-container .case-img img {
-  width: 100%;
   object-fit: cover;
   object-position: center center;
+}
+@media screen and (min-width: 1024px) {
+  .cases .case-container .case-img img, .cases .case-container .case-img video {
+    height: 45rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cases .case-container .case-img img, .cases .case-container .case-img video {
+    min-width: 24rem;
+  }
 }
 .cases .case-container .case-infos {
   padding: 1rem 2rem;
@@ -274,6 +281,11 @@ table {
   font-family: "SctoGroteskA-Bold", serif;
   text-transform: uppercase;
 }
+@media screen and (min-width: 1024px) {
+  .cases .case-container .case-infos h3 {
+    font-size: 2rem;
+  }
+}
 .cases .case-container .case-infos p {
   margin-top: 1rem;
   padding-right: 25%;
@@ -281,6 +293,22 @@ table {
   font-family: "SctoGroteskA-Medium", serif;
   text-transform: uppercase;
   word-wrap: break-word;
+}
+@media screen and (min-width: 1024px) {
+  .cases .case-container .case-infos p {
+    padding-right: 40%;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cases .case-container .case-infos {
+    padding: 2rem 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cases .case {
+    flex-grow: 1;
+  }
 }
 
 body {
