@@ -4,7 +4,7 @@
 .overview {
     width: 100%;
     height: fit-content;
-    padding: clamp(3rem, 6%, 12rem) clamp(4rem, 10%, 8rem);
+    padding: clamp(3rem, 6%, 12rem) $padding-clamp;
     color: $clr-secondary;
 
     &__cell{

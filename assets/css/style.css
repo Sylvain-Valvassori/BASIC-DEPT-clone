@@ -312,8 +312,91 @@ table {
 
 .clients {
   width: 100%;
-  height: 55rem;
-  background-color: cadetblue;
+  height: 64rem;
+  margin-top: 6rem;
+}
+.clients__line, .clients__meta, .clients__title {
+  padding: 0 clamp(4rem, 10%, 8rem);
+}
+.clients__line {
+  margin: 0 auto;
+  width: calc(100% - clamp(4rem, 10%, 8rem) * 2);
+  height: 0.1rem;
+  background-color: #252422;
+}
+.clients__meta {
+  display: flex;
+  width: 100%;
+  padding-top: 2rem;
+  font-size: 1rem;
+  line-height: 1.14;
+  text-transform: uppercase;
+  font-family: "SctoGroteskA-Bold", serif;
+}
+.clients__meta--left {
+  flex-grow: 1;
+}
+.clients__meta--right {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.clients__title {
+  padding-top: 5rem;
+  font-size: 2.4rem;
+  font-family: "SctoGroteskA-Bold", serif;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+.clients__slider {
+  overflow: hidden;
+  margin: 14rem 0;
+}
+.clients__slider__wrapper {
+  width: max-content;
+  height: fit-content;
+  position: relative;
+  top: 0;
+  left: clamp(4rem, 10%, 8rem);
+  display: flex;
+  gap: 6rem;
+}
+.clients__slider__wrapper .client {
+  width: 32rem;
+  height: 30rem;
+}
+.clients__slider__wrapper .client__logo {
+  height: 4rem;
+  width: 100%;
+}
+.clients__slider__wrapper .client__logo img {
+  height: 100%;
+}
+.clients__slider__wrapper .client__title {
+  position: relative;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: "SctoGroteskA-Bold", serif;
+}
+.clients__slider__wrapper .client__title::before {
+  content: "";
+  position: absolute;
+  top: -4rem;
+  left: 0;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #252422;
+}
+.clients__slider__wrapper .client__description {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-family: "SctoGroteskA-Medium", serif;
+  letter-spacing: -0.01em;
+}
+.clients__slider__wrapper .client__description a {
+  text-decoration: underline;
 }
 
 body {
