@@ -22,12 +22,11 @@
         width: 100%;
         padding-top: 2rem;
 
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.14;
         text-transform: uppercase;
-        font-family: $fnt-main-bold;
+        font-family: $fnt-main-medium;
 
-        
         &--left{
             flex-grow: 1;
         }
@@ -36,78 +35,136 @@
             display: flex;
             justify-content: space-between;
         }
+
+        @include min-mq ('laptop-M') {
+            font-size: 1.4rem;
+        }
     }
 
     &__title{
         padding-top: 5rem;
+        width: 30%;
 
         font-size: 2.4rem;
         font-family: $fnt-main-bold; 
         letter-spacing: -0.05em;
         text-transform: uppercase;
+
+        @include min-mq ('laptop-M') {
+            padding-top: 14rem;
+            font-size: 4rem;
+        }
     }
 
     &__slider{
-        // overflow-x: auto;
-        overflow: hidden;
-        margin: 14rem 0;
+        overflow-x: scroll;
+        margin: 6rem 0;
 
         &__wrapper{
-            width: max-content;
-            height: fit-content;
-
+            cursor: grab;
             position: relative;
             top: 0;
-            left: $padding-clamp;
-
+            left: 0;
+            width: max-content;
+            height: fit-content;
+            padding:  4rem $padding-clamp;
             display: flex;
             gap: 6rem;
-            
-            // transform: translateX(-60rem);
 
-            .client{
-                width: 32rem;
-                height: 30rem;
+            .client{ 
+                width: 25rem;
+                height: fit-content;
 
                 &__logo{
                     height: 4rem;
                     width: 100%;
+                    position: relative;
 
                     img{
                         height: 100%;
                     }
-                }
-                &__title{
-                    &::before{
+                    &::after{
                         content: "";
                         position: absolute;
-                        top: -4rem;
+                        top: 6rem;
                         left: 0;
                         width: 2rem;
                         height: .2rem;
                         background-color: $clr-secondary;
                     }
-                    
-                    position: relative;
+                }
+                &__title{
                     margin-top: 6rem;
                     margin-bottom: 2rem;
                     
                     text-transform: uppercase;
                     font-size: 2rem;
                     font-family: $fnt-main-bold;
+
+                    @include min-mq ('laptop-M') {
+                        margin-top: 12rem; 
+                    }
                 }
 
                 &__description{
                     font-size: 1.4rem;
                     line-height: 1.4;
                     font-family: $fnt-main-medium;
-                    letter-spacing: -0.01em;
+                    letter-spacing: -0.02em;
 
                     a{
                         text-decoration: underline;
                     }
+
+                    @include min-mq ('laptop-M') {
+                        font-size: 1.6rem;
+                    }
+                }
+                @include min-mq ('laptop-M') {
+                    width: 32rem;
                 }
             }
+
+            @include min-mq ('laptop-M') {
+                gap: 12rem;
+            }
         }
+
+        &__progress-bar{
+            visibility: hidden;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: calc( 100% / 4);
+                height: .2rem;
+                border-radius: .2rem;
+                background-color: rgba($clr-secondary, .6);
+            }
+
+            position: relative;
+            margin: 0 auto;
+            width: calc( 100% - $padding-clamp *2 );
+            height: .2rem;
+            border-radius: .2rem;
+            background-color: rgba($clr-secondary, .2);
+
+            @include min-mq ('laptop-M') {
+                visibility: visible;
+            }
+        }
+
+
+        @include min-mq ('laptop-M') {
+            overflow: hidden;
+            margin: 14rem 0;
+        }
+    }
+
+    @include min-mq ('laptop-M') {
+        margin-top: 14rem;
     }
 }

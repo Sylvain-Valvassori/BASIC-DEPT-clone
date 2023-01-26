@@ -45,9 +45,13 @@
                 width: $width-BD-logo-mobile;
                 fill: $clr-secondary;
                 
-                @include min-mq ('mobile-L'){
-                    margin-left: calc(100% - $width-BD-logo );
-                    width: $width-BD-logo;
+                @include min-mq ('tablet'){
+                    margin-left: calc(100% - $width-BD-logo-tablet);
+                    width: $width-BD-logo-tablet;
+                }
+                @include min-mq ('laptop'){
+                    margin-left: calc(100% - $width-BD-logo-laptop);
+                    width: $width-BD-logo-laptop;
                 }
             } 
 

@@ -19,7 +19,8 @@ $fnt-secondary          :   'Poppins', sans-serif;
 
 
 //* ---------| width |---------
-$width-BD-logo          :   clamp(38rem, 85% ,70rem);
+$width-BD-logo-laptop   :   clamp(38rem, 85%, 70rem);
+$width-BD-logo-tablet   :   clamp(38rem, 85%, 45rem);
 $width-BD-logo-mobile   :   clamp(24rem, 85%, 38rem);
 
-$padding-clamp          :   clamp(4rem, 10%, 8rem)
+$padding-clamp          :   clamp(1rem, 6%, 8rem)

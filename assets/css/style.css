@@ -62,8 +62,7 @@ table {
   top: 0;
   left: 0;
   width: 100%;
-  height: 12.6rem;
-  padding: clamp(3rem, 6%, 12rem) clamp(4rem, 10%, 8rem);
+  padding: clamp(1rem, 6%, 5rem) clamp(1rem, 6%, 8rem);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -146,7 +145,7 @@ table {
 .overview {
   width: 100%;
   height: fit-content;
-  padding: clamp(3rem, 6%, 12rem) clamp(4rem, 10%, 8rem);
+  padding: clamp(3rem, 6%, 12rem) clamp(1rem, 6%, 8rem);
   color: #252422;
 }
 .overview__cell {
@@ -187,7 +186,13 @@ table {
   width: clamp(24rem, 85%, 38rem);
   fill: #252422;
 }
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 768px) {
+  .overview__cell--right svg {
+    margin-left: calc(100% - clamp(38rem, 85%, 45rem));
+    width: clamp(38rem, 85%, 45rem);
+  }
+}
+@media screen and (min-width: 1024px) {
   .overview__cell--right svg {
     margin-left: calc(100% - clamp(38rem, 85%, 70rem));
     width: clamp(38rem, 85%, 70rem);
@@ -250,26 +255,37 @@ table {
   height: min-content;
   display: flex;
   gap: 2rem;
-  padding: 0 clamp(4rem, 10%, 8rem);
+  padding: 0 clamp(1rem, 6%, 8rem);
 }
 .cases .case {
   flex-grow: 1;
   flex-basis: 100%;
 }
-.cases .case__img img, .cases .case__img video {
+.cases .case__img {
+  overflow: hidden;
   height: 30rem;
-  aspect-ratio: 2/1;
+}
+.cases .case__img img, .cases .case__img video {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center bottom;
+  transform: scale(1.06);
+  transition: transform 300ms ease-in-out;
 }
 @media screen and (min-width: 1024px) {
   .cases .case__img img, .cases .case__img video {
-    height: 45rem;
+    object-position: center center;
   }
 }
-@media screen and (max-width: 768px) {
-  .cases .case__img img, .cases .case__img video {
-    min-width: 24rem;
+@media screen and (min-width: 1024px) {
+  .cases .case__img {
+    height: 50rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .cases .case__img {
+    height: 70rem;
   }
 }
 .cases .case__infos {
@@ -304,7 +320,14 @@ table {
     padding: 2rem 3rem;
   }
 }
-@media screen and (max-width: 768px) {
+.cases .case:hover img, .cases .case:hover video {
+  transform: scale(1);
+  transition: transform 300ms ease-in-out;
+}
+.cases .case:hover h3 {
+  text-decoration: underline;
+}
+@media screen and (max-width: 830px) {
   .cases {
     flex-direction: column;
   }
@@ -316,11 +339,11 @@ table {
   margin-top: 6rem;
 }
 .clients__line, .clients__meta, .clients__title {
-  padding: 0 clamp(4rem, 10%, 8rem);
+  padding: 0 clamp(1rem, 6%, 8rem);
 }
 .clients__line {
   margin: 0 auto;
-  width: calc(100% - clamp(4rem, 10%, 8rem) * 2);
+  width: calc(100% - clamp(1rem, 6%, 8rem) * 2);
   height: 0.1rem;
   background-color: #252422;
 }
@@ -328,10 +351,10 @@ table {
   display: flex;
   width: 100%;
   padding-top: 2rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.14;
   text-transform: uppercase;
-  font-family: "SctoGroteskA-Bold", serif;
+  font-family: "SctoGroteskA-Medium", serif;
 }
 .clients__meta--left {
   flex-grow: 1;
@@ -341,62 +364,131 @@ table {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (min-width: 1280px) {
+  .clients__meta {
+    font-size: 1.4rem;
+  }
+}
 .clients__title {
   padding-top: 5rem;
+  width: 30%;
   font-size: 2.4rem;
   font-family: "SctoGroteskA-Bold", serif;
   letter-spacing: -0.05em;
   text-transform: uppercase;
 }
+@media screen and (min-width: 1280px) {
+  .clients__title {
+    padding-top: 14rem;
+    font-size: 4rem;
+  }
+}
 .clients__slider {
-  overflow: hidden;
-  margin: 14rem 0;
+  overflow-x: scroll;
+  margin: 6rem 0;
 }
 .clients__slider__wrapper {
-  width: max-content;
-  height: fit-content;
+  cursor: grab;
   position: relative;
   top: 0;
-  left: clamp(4rem, 10%, 8rem);
+  left: 0;
+  width: max-content;
+  height: fit-content;
+  padding: 4rem clamp(1rem, 6%, 8rem);
   display: flex;
   gap: 6rem;
 }
 .clients__slider__wrapper .client {
-  width: 32rem;
-  height: 30rem;
+  width: 25rem;
+  height: fit-content;
 }
 .clients__slider__wrapper .client__logo {
   height: 4rem;
   width: 100%;
+  position: relative;
 }
 .clients__slider__wrapper .client__logo img {
   height: 100%;
 }
+.clients__slider__wrapper .client__logo::after {
+  content: "";
+  position: absolute;
+  top: 6rem;
+  left: 0;
+  width: 2rem;
+  height: 0.2rem;
+  background-color: #252422;
+}
 .clients__slider__wrapper .client__title {
-  position: relative;
   margin-top: 6rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
   font-size: 2rem;
   font-family: "SctoGroteskA-Bold", serif;
 }
-.clients__slider__wrapper .client__title::before {
-  content: "";
-  position: absolute;
-  top: -4rem;
-  left: 0;
-  width: 2rem;
-  height: 0.2rem;
-  background-color: #252422;
+@media screen and (min-width: 1280px) {
+  .clients__slider__wrapper .client__title {
+    margin-top: 12rem;
+  }
 }
 .clients__slider__wrapper .client__description {
   font-size: 1.4rem;
   line-height: 1.4;
   font-family: "SctoGroteskA-Medium", serif;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 .clients__slider__wrapper .client__description a {
   text-decoration: underline;
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider__wrapper .client__description {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider__wrapper .client {
+    width: 32rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider__wrapper {
+    gap: 12rem;
+  }
+}
+.clients__slider__progress-bar {
+  visibility: hidden;
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - clamp(1rem, 6%, 8rem) * 2);
+  height: 0.2rem;
+  border-radius: 0.2rem;
+  background-color: rgba(37, 36, 34, 0.2);
+}
+.clients__slider__progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 0.2rem;
+  border-radius: 0.2rem;
+  background-color: rgba(37, 36, 34, 0.6);
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider__progress-bar {
+    visibility: visible;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider {
+    overflow: hidden;
+    margin: 14rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .clients {
+    margin-top: 14rem;
+  }
 }
 
 body {

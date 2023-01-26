@@ -13,19 +13,28 @@
         flex-grow: 1;
         flex-basis: 100%;
 
-        &__img{                
+        &__img{        
+            overflow: hidden;
+            height: 30rem;
+
             img,video{
-                height: 30rem;
-                aspect-ratio: 2/1;
+                height: 100%;
+                width: 100%;        
                 object-fit: cover;
-                object-position: center center;
+                object-position: center bottom;
                 
+                transform: scale(1.06);
+                transition: transform 300ms ease-in-out;
+
                 @include min-mq ('laptop'){
-                    height: max(45rem);
+                    object-position: center center;
                 }
-                @include max-mq ('tablet'){
-                    min-width: 24rem;
-                }
+            }
+            @include min-mq ('laptop'){
+                height: max(50rem);
+            }
+            @include min-mq ('laptop-L'){
+                height: max(70rem);
             }
         }
         &__infos{
@@ -59,9 +68,19 @@
                 padding: 2rem 3rem;
             }
         }
+        &:hover{
+
+            img,video{
+                transform: scale(1);
+                transition: transform 300ms ease-in-out;
+            }
+            h3{
+                text-decoration: underline;
+            }
+        }
     }
     
-    @include max-mq ('tablet'){
+    @include max-mq ('tablet-M'){
         flex-direction: column;
     }
 }
