@@ -519,6 +519,12 @@ table {
   object-fit: cover;
   object-position: center center;
 }
+@media screen and (max-width: 768px) {
+  .spotlight {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+}
 
 html {
   background-color: #f4f4f4;

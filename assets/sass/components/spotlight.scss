@@ -59,5 +59,10 @@
                object-position: center center;
             } 
         }
-    }    
+    }  
+    
+    @include max-mq ('tablet'){
+        flex-direction: column-reverse;
+        gap: 5rem;
+    }
 }
