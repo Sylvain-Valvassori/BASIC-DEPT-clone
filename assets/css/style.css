@@ -324,8 +324,6 @@ table {
 }
 
 .clients {
-  width: 100%;
-  height: 64rem;
   margin-top: 6rem;
 }
 .clients__line, .clients__meta, .clients__title {
@@ -476,6 +474,50 @@ table {
   .clients {
     margin-top: 14rem;
   }
+}
+
+.spotlight {
+  width: 100%;
+  height: fit-content;
+  margin: 10vw 0;
+  padding: 0 clamp(1rem, 6%, 8rem);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+.spotlight__cell {
+  flex-basis: 100%;
+  height: 100%;
+}
+.spotlight__cell--left {
+  position: sticky;
+  top: 8rem;
+}
+.spotlight__cell--left h3 {
+  font-size: 6.25vw;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-family: "SctoGroteskA-Bold", serif;
+}
+.spotlight__cell--left h3 .dot-wrap {
+  white-space: nowrap;
+}
+.spotlight__cell--left h3 .dot-wrap :first-child {
+  padding-right: 0.15em;
+}
+.spotlight__cell--left p {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-family: "SctoGroteskA-Regular", serif span;
+  font-family-font-family: "SctoGroteskA-Bold", serif;
+}
+.spotlight__cell--left .cta-toAbout-us {
+  margin-top: 8rem;
+}
+.spotlight__cell--right video {
+  object-fit: cover;
+  object-position: center center;
 }
 
 html {
