@@ -87,7 +87,6 @@ table {
 .header .menu span {
   color: white;
   font-size: 1.6rem;
-  font-family: "SctoGroteskA-Medium", serif;
   text-transform: uppercase;
 }
 @media screen and (min-width: 1280px) {
@@ -104,7 +103,6 @@ table {
   .header__nav ul .btn-nav {
     color: white;
     font-size: 1.4rem;
-    font-family: "SctoGroteskA-Medium", serif;
     text-transform: uppercase;
     position: relative;
   }
@@ -146,7 +144,6 @@ table {
   width: 100%;
   height: fit-content;
   padding: clamp(3rem, 6%, 12rem) clamp(1rem, 6%, 8rem);
-  color: #252422;
 }
 .overview__cell {
   width: 100%;
@@ -156,7 +153,6 @@ table {
   font-size: 2.2rem;
   line-height: 1.1;
   letter-spacing: -0.035em;
-  font-family: "SctoGroteskA-Medium", serif;
   width: 100%;
 }
 @media screen and (min-width: 425px) {
@@ -220,6 +216,7 @@ table {
   padding: 0.1rem 3rem;
   border: solid 0.1rem #252422;
   border-radius: 2rem;
+  background-color: transparent;
   font-size: 1.1rem;
   line-height: 2.8rem;
   font-family: "SctoGroteskA-Bold", serif;
@@ -269,14 +266,9 @@ table {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center center;
   transform: scale(1.06);
   transition: transform 300ms ease-in-out;
-}
-@media screen and (min-width: 1024px) {
-  .cases .case__img img, .cases .case__img video {
-    object-position: center center;
-  }
 }
 @media screen and (min-width: 1024px) {
   .cases .case__img {
@@ -305,7 +297,6 @@ table {
   margin-top: 1rem;
   padding-right: 25%;
   font-size: 1.1rem;
-  font-family: "SctoGroteskA-Medium", serif;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -322,7 +313,6 @@ table {
 }
 .cases .case:hover img, .cases .case:hover video {
   transform: scale(1);
-  transition: transform 300ms ease-in-out;
 }
 .cases .case:hover h3 {
   text-decoration: underline;
@@ -354,7 +344,6 @@ table {
   font-size: 1.1rem;
   line-height: 1.14;
   text-transform: uppercase;
-  font-family: "SctoGroteskA-Medium", serif;
 }
 .clients__meta--left {
   flex-grow: 1;
@@ -384,10 +373,17 @@ table {
   }
 }
 .clients__slider {
-  overflow-x: scroll;
   margin: 6rem 0;
 }
 .clients__slider__wrapper {
+  overflow-x: scroll;
+}
+@media screen and (min-width: 1280px) {
+  .clients__slider__wrapper {
+    overflow: hidden;
+  }
+}
+.clients__slider__wrapper__box {
   position: relative;
   top: 0;
   left: 0;
@@ -397,19 +393,19 @@ table {
   display: flex;
   gap: 6rem;
 }
-.clients__slider__wrapper .client {
+.clients__slider__wrapper__box .client {
   width: 25rem;
   height: fit-content;
 }
-.clients__slider__wrapper .client__logo {
+.clients__slider__wrapper__box .client__logo {
   height: 4rem;
   width: 100%;
   position: relative;
 }
-.clients__slider__wrapper .client__logo img {
+.clients__slider__wrapper__box .client__logo img {
   height: 100%;
 }
-.clients__slider__wrapper .client__logo::after {
+.clients__slider__wrapper__box .client__logo::after {
   content: "";
   position: absolute;
   top: 6rem;
@@ -418,7 +414,7 @@ table {
   height: 0.2rem;
   background-color: #252422;
 }
-.clients__slider__wrapper .client__title {
+.clients__slider__wrapper__box .client__title {
   margin-top: 6rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -426,36 +422,34 @@ table {
   font-family: "SctoGroteskA-Bold", serif;
 }
 @media screen and (min-width: 1280px) {
-  .clients__slider__wrapper .client__title {
+  .clients__slider__wrapper__box .client__title {
     margin-top: 12rem;
   }
 }
-.clients__slider__wrapper .client__description {
+.clients__slider__wrapper__box .client__description {
   font-size: 1.4rem;
   line-height: 1.4;
-  font-family: "SctoGroteskA-Medium", serif;
   letter-spacing: -0.02em;
 }
-.clients__slider__wrapper .client__description a {
+.clients__slider__wrapper__box .client__description a {
   text-decoration: underline;
 }
 @media screen and (min-width: 1280px) {
-  .clients__slider__wrapper .client__description {
+  .clients__slider__wrapper__box .client__description {
     font-size: 1.6rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .clients__slider__wrapper .client {
+  .clients__slider__wrapper__box .client {
     width: 32rem;
   }
 }
 @media screen and (min-width: 1280px) {
-  .clients__slider__wrapper {
+  .clients__slider__wrapper__box {
     gap: 12rem;
   }
 }
 .clients__slider__progress-bar {
-  visibility: hidden;
   position: relative;
   margin: 0 auto;
   width: calc(100% - clamp(1rem, 6%, 8rem) * 2);
@@ -474,13 +468,7 @@ table {
   background-color: rgba(37, 36, 34, 0.6);
 }
 @media screen and (min-width: 1280px) {
-  .clients__slider__progress-bar {
-    visibility: visible;
-  }
-}
-@media screen and (min-width: 1280px) {
   .clients__slider {
-    overflow: hidden;
     margin: 14rem 0;
   }
 }
@@ -490,15 +478,18 @@ table {
   }
 }
 
+html {
+  background-color: #f4f4f4;
+  color: #252422;
+  font-family: "SctoGroteskA-Medium", serif;
+}
+
 body {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #f4f4f4;
-  font-family: "SctoGroteskA-Regular", serif;
-  color: #252422;
 }
 
 .showreel {

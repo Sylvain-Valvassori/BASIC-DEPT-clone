@@ -25,7 +25,6 @@
         font-size: 1.1rem;
         line-height: 1.14;
         text-transform: uppercase;
-        font-family: $fnt-main-medium;
 
         &--left{
             flex-grow: 1;
@@ -57,80 +56,84 @@
     }
 
     &__slider{
-        overflow-x: scroll;
         margin: 6rem 0;
 
         &__wrapper{
-            position: relative;
-            top: 0;
-            left: 0;
-            width: max-content;
-            height: fit-content;
-            padding:  4rem $padding-clamp;
-            display: flex;
-            gap: 6rem;
-
-            .client{ 
-                width: 25rem;
-                height: fit-content;
-
-                &__logo{
-                    height: 4rem;
-                    width: 100%;
-                    position: relative;
-
-                    img{
-                        height: 100%;
-                    }
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        top: 6rem;
-                        left: 0;
-                        width: 2rem;
-                        height: .2rem;
-                        background-color: $clr-secondary;
-                    }
-                }
-                &__title{
-                    margin-top: 6rem;
-                    margin-bottom: 2rem;
-                    
-                    text-transform: uppercase;
-                    font-size: 2rem;
-                    font-family: $fnt-main-bold;
-
-                    @include min-mq ('laptop-M') {
-                        margin-top: 12rem; 
-                    }
-                }
-
-                &__description{
-                    font-size: 1.4rem;
-                    line-height: 1.4;
-                    font-family: $fnt-main-medium;
-                    letter-spacing: -0.02em;
-
-                    a{
-                        text-decoration: underline;
-                    }
-
-                    @include min-mq ('laptop-M') {
-                        font-size: 1.6rem;
-                    }
-                }
-                @include min-mq ('laptop-M') {
-                    width: 32rem;
-                }
+            overflow-x: scroll;
+            @include min-mq ('laptop-M') {
+                overflow: hidden;
             }
 
-            @include min-mq ('laptop-M') {
-                gap: 12rem;
+            &__box{
+                position: relative;
+                top: 0;
+                left: 0;
+                width: max-content;
+                height: fit-content;
+                padding:  4rem $padding-clamp;
+                display: flex;
+                gap: 6rem;
+    
+                .client{ 
+                    width: 25rem;
+                    height: fit-content;
+    
+                    &__logo{
+                        height: 4rem;
+                        width: 100%;
+                        position: relative;
+    
+                        img{
+                            height: 100%;
+                        }
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            top: 6rem;
+                            left: 0;
+                            width: 2rem;
+                            height: .2rem;
+                            background-color: $clr-secondary;
+                        }
+                    }
+                    &__title{
+                        margin-top: 6rem;
+                        margin-bottom: 2rem;
+                        
+                        text-transform: uppercase;
+                        font-size: 2rem;
+                        font-family: $fnt-main-bold;
+    
+                        @include min-mq ('laptop-M') {
+                            margin-top: 12rem; 
+                        }
+                    }
+    
+                    &__description{
+                        font-size: 1.4rem;
+                        line-height: 1.4;
+                        letter-spacing: -0.02em;
+    
+                        a{
+                            text-decoration: underline;
+                        }
+    
+                        @include min-mq ('laptop-M') {
+                            font-size: 1.6rem;
+                        }
+                    }
+                    @include min-mq ('laptop-M') {
+                        width: 32rem;
+                    }
+                }
+    
+                @include min-mq ('laptop-M') {
+                    gap: 12rem;
+                }
             }
         }
-
+       
         &__progress-bar{
-            visibility: hidden;
 
             &::before{
                 content: "";
@@ -150,15 +153,9 @@
             height: .2rem;
             border-radius: .2rem;
             background-color: rgba($clr-secondary, .2);
-
-            @include min-mq ('laptop-M') {
-                visibility: visible;
-            }
         }
-
-
+        
         @include min-mq ('laptop-M') {
-            overflow: hidden;
             margin: 14rem 0;
         }
     }

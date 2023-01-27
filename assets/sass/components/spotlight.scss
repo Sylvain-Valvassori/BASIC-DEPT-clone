@@ -1,7 +1,7 @@
 @use '../library' as *;
 
 
-.overview {
+.spotlight{
     width: 100%;
     height: fit-content;
     padding: clamp(3rem, 6%, 12rem) $padding-clamp;
@@ -16,6 +16,7 @@
                 font-size: 2.2rem;
                 line-height: 1.1;
                 letter-spacing: -0.035em;
+                font-family: $fnt-main-medium;
                 width: 100%;    
                 
                 @include min-mq ('mobile-L'){
@@ -30,7 +31,7 @@
                 }
             }
 
-            .cta-toWork{
+            .cta-toAbout-us{
                 margin-top: 4rem;
             }
         }

@@ -21,14 +21,10 @@
                 height: 100%;
                 width: 100%;        
                 object-fit: cover;
-                object-position: center bottom;
+                object-position: center center;
                 
                 transform: scale(1.06);
                 transition: transform 300ms ease-in-out;
-
-                @include min-mq ('laptop'){
-                    object-position: center center;
-                }
             }
             @include min-mq ('laptop'){
                 height: max(50rem);
@@ -55,7 +51,6 @@
                 padding-right: 25%;
                 
                 font-size: 1.1rem;
-                font-family: $fnt-main-medium;
                 text-transform: uppercase;
                 word-wrap: break-word;
 
@@ -72,7 +67,6 @@
 
             img,video{
                 transform: scale(1);
-                transition: transform 300ms ease-in-out;
             }
             h3{
                 text-decoration: underline;
