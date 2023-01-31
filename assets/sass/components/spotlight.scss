@@ -40,7 +40,7 @@
 
                 font-size: 2rem;
                 line-height: 1.4;
-                font-family: $fnt-main-regular
+                font-family: $fnt-main-regular;
 
                 span{
                     font-family: $fnt-main-bold;
@@ -52,7 +52,6 @@
         }
 
         &--right{
-            
             
             video{
                object-fit: cover;

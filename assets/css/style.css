@@ -509,8 +509,10 @@ table {
   margin-top: 2.5rem;
   font-size: 2rem;
   line-height: 1.4;
-  font-family: "SctoGroteskA-Regular", serif span;
-  font-family-font-family: "SctoGroteskA-Bold", serif;
+  font-family: "SctoGroteskA-Regular", serif;
+}
+.spotlight__cell--left p span {
+  font-family: "SctoGroteskA-Bold", serif;
 }
 .spotlight__cell--left .cta-toAbout-us {
   margin-top: 8rem;
