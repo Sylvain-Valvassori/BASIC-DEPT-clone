@@ -1,0 +1,146 @@
+@use '../library' as *;
+
+
+.featured-news{
+    margin-top: 24rem;
+    padding: 0 $padding-clamp;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+
+        h2{
+            width: 30%;
+            font-size: 2.4rem;
+            letter-spacing: -.05em;
+            text-transform: uppercase;
+            font-family: $fnt-main-bold;
+
+            @include min-mq('tablet'){
+                font-size: 4rem;
+                width: 10%;
+            }
+        }
+    }
+    &__news-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        .new{
+            border-top: .1rem solid $clr-secondary;
+            padding-top: 2rem;
+            &__cell {
+                &--left{
+                    @include min-mq('tablet'){
+                        flex-shrink: 2;
+                    }
+                }
+                &--right{
+                    margin-top: 2rem;
+                    display: grid;
+                    gap: 5rem;
+                    grid-template-areas: 
+                        'title title'
+                        'date arrow'
+                    ;
+
+                    @include min-mq('tablet'){
+                        margin-top: 0;
+                        flex-shrink: 1;
+                    }
+                }
+
+                @include min-mq('tablet'){
+                    grid-template-areas: 
+                        'title arrow'
+                        'date .'
+                    ;
+                    flex-basis: 100%;                    
+                }
+            }
+            &__img{
+
+                overflow: hidden;
+                
+                img{
+                    height: 100%;
+                    width: 100%;        
+                    object-fit: cover;
+                    object-position: center center;
+                    
+                    transform: scale(1.06);
+                    transition: transform 300ms ease-in-out;
+                }
+
+                // @include min-mq('tablet'){
+                //     max-width: 57rem;        
+                // }
+            }
+            &__title{
+                grid-area: title;
+
+                font-size: 2.4rem;
+                letter-spacing: -.05em;
+                text-transform: uppercase;
+  
+                @include min-mq('tablet'){
+                    align-self: start;
+                    font-size: clamp(2rem, 2.67vh, 4rem);
+                    min-width: 70%;
+                }
+                @include min-mq('laptop-L'){
+                    max-width: 60%;
+                }
+
+            }
+            .arrow{
+                height: clamp(2rem, 3vw, 3rem);
+                aspect-ratio: 1/1;
+                grid-area: arrow;
+                align-self: center;
+                justify-self: end;
+
+                @include min-mq('tablet'){
+                    align-self: start;
+                }
+            }
+            &__date{
+                grid-area: date;
+                align-self: center;
+
+                font-size: 1.2rem;
+                letter-spacing: -.02em;
+                text-transform: uppercase;
+                font-family: $fnt-main-bold;
+                
+                span{
+                    margin-left: .5rem;
+                    font-family: $fnt-main-regular;
+                }
+                @include min-mq('tablet'){
+                    font-size: 1.5rem;
+                    align-self: end;
+                }
+            }
+            &:hover{
+
+                img{
+                    transform: scale(1.01);
+                }
+                .new__title{
+                    text-decoration: underline;
+                }
+            }
+
+            @include min-mq('tablet'){
+                display: flex;
+                gap: 2rem;
+
+                max-height: 36rem;
+            }
+        }
+    }
+}
