@@ -1,0 +1,186 @@
+@use '../library' as *;
+
+
+.footer{
+
+    margin-top: 10rem;
+
+    color: $clr-main;
+    background-color: $clr-secondary;
+
+    &__dot{
+
+        font-size: 1.4rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em; 
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+
+        &::before{
+            content: "●";
+            margin-right: 0.5em;
+        }
+        @include min-mq('laptop-M'){
+            font-size: 2rem;
+        }
+    }
+
+    &__heading{
+        padding: 5rem $padding-clamp 0 $padding-clamp;
+
+        &__logo{
+            width: 5rem;
+            fill: $clr-main;
+
+            @include min-mq('laptop-M'){
+                width: 6rem;
+            }
+        }
+
+        h3{
+            margin: 5rem 0;
+
+            font-size: 2rem;
+            line-height: 1;
+            letter-spacing: -0.01em; 
+
+            a{
+                border-bottom: .2rem solid $clr-main;
+            }
+            @include min-mq('laptop-M'){
+                margin: 0;
+                padding-right: 20rem;
+                font-size: 3rem;
+                align-self: start;
+            }
+        }
+
+        @include min-mq('laptop-M'){
+            padding: 15rem 20rem 0 $padding-clamp;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15rem;
+        }
+    }
+
+    &__content{
+        padding: 0 $padding-clamp;
+
+        &--left{
+
+            .newsletter-form{
+
+                width: 100%;
+                height: min-content;
+                position: relative;
+                
+                input{
+                    all: unset;
+                    width: 100%;
+                    height: 100%;
+
+                    padding: 1.5rem 0;
+                    border-bottom: .1rem solid $clr-main;
+
+                    &::placeholder {
+
+                        color: $clr-main;
+                        font-size: 1.4rem;
+
+                        @include min-mq('laptop-M'){
+                            font-size: 2rem;
+                        }
+                    }
+                }
+
+                button{
+                    all: unset;
+                    cursor: pointer;
+                    
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    .arrow-btn{
+                        width: 2rem;
+                        aspect-ratio: 1/1;
+                        fill: $clr-main;
+                    }
+                }
+            }
+        }
+        &--right{
+
+            @include min-mq('laptop-M'){
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 5rem;
+            }
+
+            ul {
+                margin-top: 5rem;
+
+                li{
+                    margin-top: .5rem;
+
+                    font-size: 1.4rem;
+                    line-height: 1;
+                    font-family: $fnt-main-regular;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+
+                    @include min-mq('laptop-M'){
+                        font-size: 1.8rem;
+                    }
+                }
+                @include min-mq('laptop-M'){
+                    margin: 0;
+                }
+            }
+        }
+
+        @include min-mq('laptop-M'){
+            margin-top: 10rem;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15rem;
+
+            padding: 0 20rem 10rem $padding-clamp;
+        }
+    }
+
+    &__copyright{
+        margin-top: 5rem;
+        padding: 2rem $padding-clamp;
+        background-color: $clr-cod-gray;
+
+        
+        p{
+            text-align: center;
+            color: rgba($clr-main, .2);
+            font-size: 1.1rem;
+            letter-spacing: -0.02em; 
+            text-transform: uppercase;
+
+            padding: .2rem 0;
+
+            a:hover{
+                text-decoration: underline;
+            }
+        }
+
+        @include min-mq('laptop-M'){
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+
+    @include min-mq('laptop-M'){
+        margin-top: 40rem;
+    }
+}
