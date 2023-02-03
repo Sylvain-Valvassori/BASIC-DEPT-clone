@@ -29,12 +29,15 @@
         flex-direction: column;
         gap: 5rem;
 
-        .new{
+        .new {
             border-top: .1rem solid $clr-secondary;
             padding-top: 2rem;
+
+
             &__cell {
                 &--left{
                     @include min-mq('tablet'){
+                        min-width: clamp(22vw, 30vw, 24vw);
                         flex-shrink: 2;
                     }
                 }
@@ -61,23 +64,18 @@
                     flex-basis: 100%;                    
                 }
             }
-            &__img{
-
+            &__img{   
                 overflow: hidden;
                 
                 img{
                     height: 100%;
-                    width: 100%;        
+                    width: 100%;
                     object-fit: cover;
                     object-position: center center;
                     
                     transform: scale(1.06);
                     transition: transform 300ms ease-in-out;
                 }
-
-                // @include min-mq('tablet'){
-                //     max-width: 57rem;        
-                // }
             }
             &__title{
                 grid-area: title;
@@ -88,11 +86,12 @@
   
                 @include min-mq('tablet'){
                     align-self: start;
-                    font-size: clamp(2rem, 2.67vh, 4rem);
-                    min-width: 70%;
+                    font-size: 4rem;
+                    font-size: clamp(2rem, 3vw, 4rem);
+                    min-width: 60%;
                 }
                 @include min-mq('laptop-L'){
-                    max-width: 60%;
+                    max-width: 70%;
                 }
 
             }
@@ -128,7 +127,7 @@
             &:hover{
 
                 img{
-                    transform: scale(1.01);
+                    transform: scale(1.0001);
                 }
                 .new__title{
                     text-decoration: underline;
@@ -139,7 +138,8 @@
                 display: flex;
                 gap: 2rem;
 
-                max-height: 36rem;
+                height: clamp(14rem, 20vw, 38rem);
+                max-height: 38rem;
             }
         }
     }
