@@ -377,11 +377,7 @@ table {
 }
 .clients__slider__wrapper {
   overflow-x: scroll;
-}
-@media screen and (min-width: 1280px) {
-  .clients__slider__wrapper {
-    overflow: hidden;
-  }
+  overflow: hidden;
 }
 .clients__slider__wrapper__box {
   position: relative;
@@ -449,7 +445,7 @@ table {
     gap: 12rem;
   }
 }
-.clients__slider__progress-bar {
+.clients__slider__scroll-bar {
   position: relative;
   margin: 0 auto;
   width: calc(100% - clamp(1rem, 6%, 8rem) * 2);
@@ -457,8 +453,7 @@ table {
   border-radius: 0.2rem;
   background-color: rgba(37, 36, 34, 0.2);
 }
-.clients__slider__progress-bar::before {
-  content: "";
+.clients__slider__scroll-bar #cursorScroll {
   position: absolute;
   top: 0;
   left: 0;
@@ -771,7 +766,7 @@ table {
   line-height: 1;
   font-family: "SctoGroteskA-Regular", serif;
 }
-.footer__content--right ul li:hover {
+.footer__content--right ul li a:hover {
   text-decoration: underline;
 }
 @media screen and (min-width: 1280px) {

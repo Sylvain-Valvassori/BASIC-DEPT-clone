@@ -58,8 +58,8 @@
 
         &__wrapper{
             overflow-x: scroll;
+            overflow: hidden;
             @include min-mq ('laptop-M') {
-                overflow: hidden;
             }
 
             &__box{
@@ -72,6 +72,7 @@
                 display: flex;
                 gap: 6rem;
     
+              
                 .client{ 
                     width: 25rem;
                     height: fit-content;
@@ -131,10 +132,16 @@
             }
         }
        
-        &__progress-bar{
+        &__scroll-bar{
 
-            &::before{
-                content: "";
+            position: relative;
+            margin: 0 auto;
+            width: calc( 100% - $padding-clamp *2 );
+            height: .2rem;
+            border-radius: .2rem;
+            background-color: rgba($clr-secondary, .2);
+
+            #cursorScroll{
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -144,13 +151,6 @@
                 border-radius: .2rem;
                 background-color: rgba($clr-secondary, .6);
             }
-
-            position: relative;
-            margin: 0 auto;
-            width: calc( 100% - $padding-clamp *2 );
-            height: .2rem;
-            border-radius: .2rem;
-            background-color: rgba($clr-secondary, .2);
         }
         
         @include min-mq ('laptop-M') {
